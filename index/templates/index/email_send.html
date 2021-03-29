@@ -1,0 +1,51 @@
+
+{% extends 'index/main.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}" />
+{% block content %}
+
+
+<style>
+body{
+    background-color:#D9FBFF;
+
+   }
+
+    .response_wrapper{
+
+           color:green;
+           display:grid;
+           justify-content:center;
+           margin:12%;
+           border_radius:50px;
+                    }
+
+    #thanks{
+         font-size:35px;
+         font-weight:bold;
+         color:#2D754A;
+         }
+    #return_home{
+            color:#2D754A;
+            font-size:20px;
+            text-align:center;
+            border-radius:20px;
+            font-weight:bold;
+            padding:20px;
+            background-color:#56E38E;
+            text-decoration:none;
+          }
+
+
+</style>
+<body>
+<div class="response_wrapper">
+
+<p id="thanks">Thanks for reaching out </p>
+    <a id="return_home"href=" {% url 'home' %}">Back home</a>
+</div>
+</body>
+
+
+
+{% endblock content %}

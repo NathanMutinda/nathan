@@ -1,0 +1,45 @@
+{% extends 'index/main.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+            *{
+               font-family: 'Russo One', sans-serif;
+        </style>
+
+</head>
+
+<style type="text/css">
+    img{
+        max-width:100%;
+        object-fit:cover;
+        }
+        .bg-color{
+          padding:25px;
+          background-color:#D9FBFF;
+          width:auto;
+          height:100px;
+          }
+          .back{
+              margin-top:20px;
+              margin-left:30px;
+          }
+
+</style>
+<a class="btn btn-success back" href="{% url 'home' %}">&#x2190; Back to homepage </a>
+
+<div class="main-container">
+<h1>{{ post.headline }}</h1>
+    <h4>{{post.sub_headline}}</h4>
+   <!-- <h6>{{post.created }}</h6>-->
+     <img src="{{ post.thumbnail.url }}">
+    <p>
+        <div class="bg-color">{{post.body| safe }}</div>
+    </p>
+
+</div>
+
+{% endblock content %}
